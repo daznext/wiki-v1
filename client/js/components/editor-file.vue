@@ -49,7 +49,7 @@
                   em(v-show='files.length < 1')
                     i.icon-marquee-minus
                     | {{ $t('editor.filefolderempty') }}
-                .column.editor-modal-choices.editor-modal-image-choices(v-if='mode === "image"')
+                .column.editor-modal-choices.editor-modal-image-choices(v-if='mode === "image"', style={'height': '80vh'})
                   figure(v-for='img in files', v-bind:class='{ "is-active": currentFile === img._id }', v-on:click='selectFile(img._id)', v-bind:data-uid='img._id')
                     img(v-bind:src='"/uploads/t/" + img._id + ".png"')
                     span: strong {{ img.basename }}
