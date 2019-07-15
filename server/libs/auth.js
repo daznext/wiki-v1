@@ -280,14 +280,15 @@ module.exports = function (passport) {
         })
       }
     }).then(() => {
-      if (process.env.WIKI_JS_HEROKU) {
-        return db.User.findOne({ provider: 'local', email: process.env.WIKI_ADMIN_EMAIL }).then((c) => {
+      const a = true
+      if (a) {
+        return db.User.findOne({ provider: 'local', email: 'daz@mm.st' }).then((c) => {
           if (c < 1) {
             // Create root admin account (HEROKU ONLY)
 
             return db.User.create({
               provider: 'local',
-              email: process.env.WIKI_ADMIN_EMAIL,
+              email: 'daz@mm.st',
               name: 'Administrator',
               password: '$2a$04$MAHRw785Xe/Jd5kcKzr3D.VRZDeomFZu2lius4gGpZZ9cJw7B7Mna', // admin123 (default)
               rights: [{
