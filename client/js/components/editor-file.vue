@@ -25,7 +25,7 @@
                 span Fetch from URL
             section.is-gapless
               .columns.is-stretched
-                .column.is-one-quarter.modal-sidebar.is-green(style={'max-width':'350px'})
+                .column.is-one-quarter.modal-sidebar.is-green(style={'max-width':'350px', 'overflow-y': 'scroll', 'height': '80vh'})
                   .model-sidebar-header {{ $t('editor.folders') }}
                   ul.model-sidebar-list
                     li(v-for='fld in folders')
